@@ -1,8 +1,27 @@
 import { View, Text, StyleSheet, SafeAreaView, Image } from 'react-native'
-import React from 'react'
-import Card from '../components/Card'
+import React, { useState, useEffect } from 'react';
+import { FlatList } from 'react-native';
+import Card from '../components/Card';
+import Data from '../Data.json'
 
 const Homepage = () => {
+    const [data, setData] = useState(Data); 
+
+    const getLogoSource = (App) => {
+        switch (App) {
+          case 'Apple Store':
+            return require('../assets/apple.png');
+          case 'Spotify':
+            return require('../assets/spotify.png');
+            case 'Money Transfer':
+            return require('../assets/moneyTransfer.png');
+            case 'Grocery':
+            return require('../assets/grocery.png');
+          
+          default:
+            return require('../assets/apple.png'); // A default logo if no match is found
+        }
+    };
   return (
     <SafeAreaView style={styles.container}>
         <View style={styles.userInfo}>
@@ -58,10 +77,26 @@ const Homepage = () => {
                 <Text style={styles.t2}>Sell All</Text>
             </View>
 
+            {/* <Card/>
             <Card/>
             <Card/>
-            <Card/>
-            <Card/>
+            <Card/> */}
+
+            <FlatList
+          data={data}
+          renderItem={({ item }) => (
+            <Card 
+              App={item.App}
+              Logo={getLogoSource(item.App)}
+              Classification={item.Classification} 
+              Cost={item.Cost}
+            />
+          )}
+          keyExtractor={item => item.id.toString()} 
+          
+          showsVerticalScrollIndicator={false}
+       
+        />
 
         </View>
 

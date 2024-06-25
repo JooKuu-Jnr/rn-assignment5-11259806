@@ -1,25 +1,25 @@
 import { View, Text, StyleSheet,SafeAreaView, Image } from 'react-native'
 import React from 'react'
 
-const Card = () => {
+const Card = ( {Logo,App, Classification,Cost}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.cardDesign}>
 
       <View style={styles.logo}>
-      <Image source={require("../assets/apple.png")}/>
+      <Image source={Logo}/>
 
       </View>
 
       <View style={styles.cardText}>
-        <Text style={styles.ct1}>Apple Store</Text>
-        <Text style={styles.ct2}>Entertainment</Text>
+        <Text style={styles.ct1}>{App}</Text>
+        <Text style={styles.ct2}>{Classification}</Text>
 
       </View>
       
       <View style={styles.cardCost}>
         <Text style={styles.ct1}>
-          -$5,99
+          {Cost}
         </Text>
 
       </View>

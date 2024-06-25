@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "Logo": "../assets/apple.png",
+      "App": "Apple Store",
+      "Classification": "Entertainment",
+      "Cost": "-$5,99"
+    },
+    {
+        "id": 2,
+        "Logo": "../assets/spotify.png",
+        "App": "Spotify",
+        "Classification": "Music",
+        "Cost": "-$12,99"
+    },
+    {
+        "id": 3,
+        "Logo": "../assets/apple.png",
+        "App": "Money Transfer",
+        "Classification": "Transactiont",
+        "Cost": "$300"
+      },
+      {
+        "id": 4,
+        "Logo": "../assets/apple.png",
+        "App": "Grocery",
+        "Classification": "Food",
+        "Cost": "-$88"
+      }
+]
