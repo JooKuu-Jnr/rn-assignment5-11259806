@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, SafeAreaView, Image } from 'react-native'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import Card from '../components/Card'
 
 const Homepage = () => {
   return (
@@ -57,6 +57,11 @@ const Homepage = () => {
                 <Text style={styles.t1}>Transactions</Text>
                 <Text style={styles.t2}>Sell All</Text>
             </View>
+
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
 
         </View>
 

@@ -12,10 +12,15 @@ const Card = () => {
       </View>
 
       <View style={styles.cardText}>
+        <Text style={styles.ct1}>Apple Store</Text>
+        <Text style={styles.ct2}>Entertainment</Text>
 
       </View>
       
       <View style={styles.cardCost}>
+        <Text style={styles.ct1}>
+          -$5,99
+        </Text>
 
       </View>
 
@@ -26,32 +31,35 @@ const Card = () => {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    margin: 15,
-  },
   cardDesign: {
     flexDirection: 'row',
     // justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: 'grey',
     width: 'auto',
     height: 70
   },
   logo: {
     width: 40,
     height: 40,
-    backgroundColor: 'white',
+    backgroundColor: '#E8E8E8',
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center'
   },
 
   cardText:{
+    marginLeft: 15
 
   },
+  ct1:{
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
+  ct2:{
+    color:'grey'
+  },
   cardCost:{
+    marginLeft: 'auto',
   }
 
 });
