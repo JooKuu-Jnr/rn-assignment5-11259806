@@ -24,6 +24,7 @@ const Homepage = () => {
     };
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.overview}>
         <View style={styles.userInfo}>
             <View style={styles.profile}>
                 <Image source={require("../assets/profile.png")}/>
@@ -102,7 +103,7 @@ const Homepage = () => {
 
     
         
-     
+      </View>
     </SafeAreaView>
   )
 }
@@ -111,10 +112,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    margin: 15,
+    
     
     // alignItems: 'center',
     // justifyContent: 'center',
+  },
+  overview:{
+    margin: 15
   },
   userInfo: {
     flexDirection: 'row',
