@@ -1,11 +1,13 @@
 import { View, Text, StyleSheet, SafeAreaView, Image } from 'react-native'
 import React, { useState, useEffect } from 'react';
+import { useTheme } from '../ThemeContext';
 import { FlatList } from 'react-native';
 import Card from '../components/Card';
 import Data from '../Data.json'
 
 const Homepage = () => {
     const [data, setData] = useState(Data); 
+    const { isDarkTheme } = useTheme();
 
     const getLogoSource = (App) => {
         switch (App) {
@@ -23,7 +25,7 @@ const Homepage = () => {
         }
     };
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: isDarkTheme ? '#161622' : 'white' }]}>
       <View style={styles.overview}>
         <View style={styles.userInfo}>
             <View style={styles.profile}>
@@ -31,11 +33,11 @@ const Homepage = () => {
             </View>
 
             <View style={styles.profileText}>
-                <Text style={styles.h1}>Welcome Back</Text>
-                <Text style={styles.h2}>Eric Atsu</Text>
+                <Text style={[styles.h1, { color: isDarkTheme ? 'white' : 'black' }]}>Welcome Back</Text>
+                <Text style={[styles.h2, { color: isDarkTheme ? 'white' : 'black' }]}>Eric Atsu</Text>
 
             </View>
-            <View style={styles.profileSearch}>
+            <View style={[styles.profileSearch, { backgroundColor: isDarkTheme ? '#27273A' : '#E8E8E8' }]}>
             <Image source={require("../assets/search.png")}/>
          
             </View>
@@ -47,34 +49,34 @@ const Homepage = () => {
         </View>
 
         <View style={styles.iconRow}>
-            <View style={styles.icons}>
+            <View style={[styles.icons, { backgroundColor: isDarkTheme ? '#27273A' : '#E8E8E8' }]}>
             <Image source={require("../assets/send.png")}/>
             </View>
-            <View style={styles.icons}>
+            <View style={[styles.icons, { backgroundColor: isDarkTheme ? '#27273A' : '#E8E8E8' }]}>
             <Image source={require("../assets/recieve.png")}/>
          
             </View>
-            <View style={styles.icons}>
+            <View style={[styles.icons, { backgroundColor: isDarkTheme ? '#27273A' : '#E8E8E8' }]}>
             <Image source={require("../assets/loan.png")}/>
          
             </View>
-            <View style={styles.icons}>
+            <View style={[styles.icons, { backgroundColor: isDarkTheme ? '#27273A' : '#E8E8E8' }]}>
             <Image source={require("../assets/topUp.png")}/>
          
             </View>
         </View>
 
         <View style={styles.text}>
-            <Text>       Sent   </Text>
-            <Text>          Receive </Text>
-            <Text>           Loan</Text>
-            <Text>             Topup</Text>
+            <Text  style={[{ color: isDarkTheme ? 'white' : 'black' }]}>       Sent   </Text>
+            <Text style={[{ color: isDarkTheme ? 'white' : 'black' }]}>         Receive </Text>
+            <Text style={[{ color: isDarkTheme ? 'white' : 'black' }]}>           Loan</Text>
+            <Text style={[{ color: isDarkTheme ? 'white' : 'black' }]}>             Topup</Text>
 
         </View>
 
         <View style={styles.transactionSection}>
             <View style={styles.headerRow}>
-                <Text style={styles.t1}>Transactions</Text>
+                <Text style={[styles.t1, { color: isDarkTheme ? 'white' : 'black' }]}>Transactions</Text>
                 <Text style={styles.t2}>Sell All</Text>
             </View>
 

@@ -1,18 +1,22 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, Switch } from 'react-native'
+import { useTheme } from '../ThemeContext'
 
 const Settings = () => {
+    const [isEnabled, setIsEnabled] = React.useState(false);
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    const { isDarkTheme, toggleTheme } = useTheme();
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: isDarkTheme ? '#161622' : '#fff' }]}>
         <View style={styles.overview}>
 
           <View style={styles.options}>
 
             <TouchableOpacity>
             <View style={styles.option}>
-                <Text style={styles.t1}>Language</Text>
+                <Text style={[styles.t1, { color: isDarkTheme ? 'white' : 'black' }]}>Language</Text>
                 <Text style={styles.t2}>{'>'}</Text>
 
             </View>
@@ -20,7 +24,7 @@ const Settings = () => {
 
             <TouchableOpacity>
             <View style={styles.option}>
-                <Text style={styles.t1}>My Profile</Text>
+                <Text style={[styles.t1, { color: isDarkTheme ? 'white' : 'black' }]}>My Profile</Text>
                 <Text style={styles.t2}>{'>'}</Text>
 
             </View>
@@ -28,7 +32,7 @@ const Settings = () => {
             
             <TouchableOpacity>
             <View style={styles.option}>
-                <Text style={styles.t1}>Contact Us</Text>
+                <Text style={[styles.t1, { color: isDarkTheme ? 'white' : 'black' }]}>Contact Us</Text>
                 <Text style={styles.t2}>{'>'}</Text>
 
             </View>
@@ -36,7 +40,7 @@ const Settings = () => {
 
             <TouchableOpacity>
             <View style={styles.option}>
-                <Text style={styles.t1}>Change Password</Text>
+                <Text style={[styles.t1, { color: isDarkTheme ? 'white' : 'black' }]}>Change Password</Text>
                 <Text style={styles.t2}>{'>'}</Text>
 
             </View>
@@ -44,11 +48,24 @@ const Settings = () => {
 
             <TouchableOpacity>
             <View style={styles.option}>
-                <Text style={styles.t1}>Privacy Policy</Text>
+                <Text style={[styles.t1, { color: isDarkTheme ? 'white' : 'black' }]}>Privacy Policy</Text>
                 <Text style={styles.t2}>{'>'}</Text>
 
             </View>
             </TouchableOpacity>
+
+            <View style={styles.theme}>
+          <Text style={[styles.theme1, { color: isDarkTheme ? 'white' : 'black' }]}>Theme</Text>
+          <Switch
+            trackColor={{ false: "#767577", true: "#81b0ff" }}
+            thumbColor={isDarkTheme ? "#f5dd4b" : "#f4f3f4"}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleTheme}
+            value={isDarkTheme}
+            style={[styles.switch, { color: isDarkTheme ? 'lightgrey' : 'grey' }]}
+          />
+        </View>
+
 
            </View>
 
@@ -86,5 +103,19 @@ const styles = StyleSheet.create({
         fontSize: 17,
         color: 'grey'
 
+    },
+    theme:{
+        height: 50,
+        alignItems:'center',
+        flexDirection: 'row',
+        marginTop: 30
+    },
+    theme1:{
+        fontSize: 23,
+        fontWeight: 'bold'
+
+    },
+    switch: {
+        marginLeft: "auto"
     }
 })

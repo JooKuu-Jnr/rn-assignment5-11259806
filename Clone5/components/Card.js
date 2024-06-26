@@ -1,24 +1,26 @@
 import { View, Text, StyleSheet,SafeAreaView, Image } from 'react-native'
 import React from 'react'
+import { useTheme } from '../ThemeContext'; 
 
 const Card = ( {Logo,App, Classification,Cost}) => {
+  const { isDarkTheme } = useTheme();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.cardDesign}>
 
-      <View style={styles.logo}>
-      <Image source={Logo}/>
+      <View style={[styles.logo, { backgroundColor: isDarkTheme ? '#252839' : '#E8E8E8' }]}>
+      <Image source={Logo} />
 
       </View>
 
       <View style={styles.cardText}>
-        <Text style={styles.ct1}>{App}</Text>
-        <Text style={styles.ct2}>{Classification}</Text>
+        <Text style={[styles.ct1, { color: isDarkTheme ? 'white' : 'black' }]}>{App}</Text>
+        <Text style={[styles.ct2, { color: isDarkTheme ? 'lightgrey' : 'grey' }]}>{Classification}</Text>
 
       </View>
       
       <View style={styles.cardCost}>
-        <Text style={styles.ct1}>
+        <Text style={[styles.ct1, { color: isDarkTheme ? 'white' : 'black' }]}>
           {Cost}
         </Text>
 
