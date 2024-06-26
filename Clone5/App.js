@@ -14,12 +14,22 @@ function MyTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerShown: false,
+      tabBarActiveBackgroundColor: '#fff',
+      headerStyle: {
+        shadowOpacity: 0,
+        elevation: 0,
+        borderBottomWidth: 0, 
+      },
+      headerTitleStyle: {
+        fontSize: 22, 
+        paddingTop: 15,
+      }
       }}
     >
       <Tab.Screen name="Home" 
       component={Homepage} 
        options={{
+        headerShown: false,
         tabBarIcon: () => (
           <Image source={require("./assets/home.png")}/>
         )

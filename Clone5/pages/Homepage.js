@@ -78,11 +78,7 @@ const Homepage = () => {
                 <Text style={styles.t2}>Sell All</Text>
             </View>
 
-            {/* <Card/>
-            <Card/>
-            <Card/>
-            <Card/> */}
-
+            
             <FlatList
           data={data}
           renderItem={({ item }) => (
@@ -118,7 +114,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   overview:{
-    margin: 15
+    margin: 18
   },
   userInfo: {
     flexDirection: 'row',

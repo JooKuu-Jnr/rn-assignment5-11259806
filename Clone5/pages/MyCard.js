@@ -11,4 +11,6 @@ const MyCard = () => {
 
 export default MyCard
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    
+})
