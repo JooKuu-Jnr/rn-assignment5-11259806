@@ -24,6 +24,9 @@ const Homepage = () => {
             return require('../assets/apple.png'); // A default logo if no match is found
         }
     };
+      const imageStyle = {
+        filter: isDarkTheme ? 'invert(1)' : 'none'
+    };
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: isDarkTheme ? '#161622' : 'white' }]}>
       <View style={styles.overview}>
@@ -38,7 +41,7 @@ const Homepage = () => {
 
             </View>
             <View style={[styles.profileSearch, { backgroundColor: isDarkTheme ? '#27273A' : '#E8E8E8' }]}>
-            <Image source={require("../assets/search.png")}/>
+            <Image  source={require("../assets/search.png")}/>
          
             </View>
 

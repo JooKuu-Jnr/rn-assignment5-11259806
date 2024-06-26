@@ -57,12 +57,12 @@ const Settings = () => {
             <View style={styles.theme}>
           <Text style={[styles.theme1, { color: isDarkTheme ? 'white' : 'black' }]}>Theme</Text>
           <Switch
-            trackColor={{ false: "#767577", true: "#81b0ff" }}
-            thumbColor={isDarkTheme ? "#f5dd4b" : "#f4f3f4"}
+            trackColor={{ false: "#767577", true: "green" }}
+            thumbColor={isDarkTheme ? "#fff" : "#f4f3f4"}
             ios_backgroundColor="#3e3e3e"
             onValueChange={toggleTheme}
             value={isDarkTheme}
-            style={[styles.switch, { color: isDarkTheme ? 'lightgrey' : 'grey' }]}
+            style={[styles.switch, { color: isDarkTheme ? 'green' : 'green' }]}
           />
         </View>
 
